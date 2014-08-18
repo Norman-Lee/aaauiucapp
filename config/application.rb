@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Aaauiucapp
   class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.f
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -21,3 +25,5 @@ module Aaauiucapp
     # config.i18n.default_locale = :de
   end
 end
+
+

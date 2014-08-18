@@ -40,4 +40,12 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
-ruby "2.1.1"
+gem 'paperclip', '~>4.1'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+
+#ruby "2.1.1"
