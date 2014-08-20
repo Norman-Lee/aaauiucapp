@@ -48,4 +48,6 @@ group :test do
   gem 'ffaker'
 end
 
+gem "devise"
+
 #ruby "2.1.1"
