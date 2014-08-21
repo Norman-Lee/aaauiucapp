@@ -1,11 +1,11 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
-  root 'welcome#index'
-  namespace :api, defaults: {format: :json},
+  #root 'welcome#index'
+  namespace :api, defaults: {format: :json}, 
                               constraints: {subdomain: 'api'}, path: '/' do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-
+      resources :events, only: :show
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
