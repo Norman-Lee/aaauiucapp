@@ -61,5 +61,14 @@ RSpec.describe Api::V1::EventsController, :type => :controller do
 
 			it { should respond_with 200 }	
 		end	
+	end
+
+	describe "DELETE #destroy" do
+		before(:each) do
+			@event = FactoryGirl.create :event
+			delete :destroy, {id: @event.id}, format: :json
+		end
+
+		it { should respond_with 204 }
 	end		
 end
