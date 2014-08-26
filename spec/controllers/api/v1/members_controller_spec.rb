@@ -48,7 +48,7 @@ RSpec.describe Api::V1::MembersController, :type => :controller do
 	describe "PUT/PATCH #update" do
 		context "when successfully updated" do
 			before(:each) do
-				@member - FactoryGirl.create :event
+				@member = FactoryGirl.create :member
 				patch :update, { id: @member.id, member: {e_mail: "yoloswaq420@gmail.com"}}
 			end
 
@@ -63,7 +63,7 @@ RSpec.describe Api::V1::MembersController, :type => :controller do
 
 	describe "DELETE #destroy" do
 		before(:each) do
-			@member - FactoryGirl.create :member
+			@member = FactoryGirl.create :member
 			delete :destroy, {id: @member.id}
 		end
 
