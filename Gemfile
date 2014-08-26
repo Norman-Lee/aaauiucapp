@@ -51,4 +51,6 @@ end
 
 gem "devise"
 
+gem "validates_email_format_of"
+
 #ruby "2.1.1"

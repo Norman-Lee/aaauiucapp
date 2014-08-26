@@ -8,7 +8,7 @@ class Api::V1::MembersController < ApplicationController
 	def create
 		member = Member.new(member_params)
 		if member.save
-			render json: member, status: 201, location[:api, member]
+			render json: member, status: 201, location: [:api, member]
 		else
 			render json: {errors: member.errors}, status: 422
 		end
@@ -18,9 +18,9 @@ class Api::V1::MembersController < ApplicationController
 		member = Member.find(params[:id])
 
 		if member.update(member_params)
-			render json: member, status: 200, location[:api, member]
+			render json: member, status: 200, location: [:api, member]
 		else
-			render json: { errors: event.errors }, status: 422
+			render json: { errors: member.errors }, status: 422
 		end
 	end
 
