@@ -1,0 +1,4 @@
+en:
+	faker:
+		school: 
+			class_standing: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate']
