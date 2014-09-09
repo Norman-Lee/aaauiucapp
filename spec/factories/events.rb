@@ -2,8 +2,8 @@ FactoryGirl.define do
 	factory :event do
 		name { Faker::Name.name }
 		location { Faker::Address.street_address }
-		event_time { Time.at(rand * Time.now.to_i) }
-		deploy_time { Time.at(rand * Time.now.to_i) }
+		event_time { Time.today - rand(10000) }
+		deploy_time { Time.today + rand(10000) }
 		desc { Faker::Lorem.sentence }
 
 	end
