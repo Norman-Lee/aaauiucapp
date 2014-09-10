@@ -45,7 +45,7 @@ gem 'paperclip', '~>4.1'
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'ffaker'
+  gem 'faker'
   gem 'shoulda-matchers'
 end
 

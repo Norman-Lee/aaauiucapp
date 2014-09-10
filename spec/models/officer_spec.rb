@@ -6,9 +6,9 @@ describe Officer do
 	subject { @officer }
 
 	it { should respond_to(:username) }
-	it { should respond_to(:password) }
-	it { should respond_to(:start_time)}
-	it { should respond_to(:end_time)}
+	it { should respond_to(:salted_password) }
+	it { should respond_to(:start_date)}
+	it { should respond_to(:end_date)}
 	it { should respond_to(:auth_token)}
 
 	describe '#generate_authentication_token!' do
