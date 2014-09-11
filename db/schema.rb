@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909232222) do
+ActiveRecord::Schema.define(version: 20140911033017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,16 +71,27 @@ ActiveRecord::Schema.define(version: 20140909232222) do
 
   create_table "officers", force: true do |t|
     t.string   "username"
-    t.string   "salted_password"
     t.integer  "chair_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
-    t.string   "auth_token",      default: ""
+    t.string   "auth_token",             default: ""
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
   add_index "officers", ["auth_token"], name: "index_officers_on_auth_token", unique: true, using: :btree
+  add_index "officers", ["email"], name: "index_officers_on_email", unique: true, using: :btree
+  add_index "officers", ["reset_password_token"], name: "index_officers_on_reset_password_token", unique: true, using: :btree
 
 end
